@@ -9,9 +9,13 @@
 
 	<div class="box">
     	<form method=post enctype=multipart/form-data>
-    		<h1><input type=file name=image accept="image/jpeg"></h1>
+    		<h1><input type=url name=image></h1>
     		<h1><input type=submit value=Predict></h1>
     	</form>
+
+		{% if pred %}
+			<p> {{ pred }}</p>
+		{% endif %}
 	</div>
 
 </body>
