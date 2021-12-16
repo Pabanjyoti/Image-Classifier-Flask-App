@@ -9,11 +9,13 @@
 
 	<div class="box">
     	<form method=post enctype=multipart/form-data>
+			<P align=center>Input the Image URL</P>
     		<h1><input type=url name=image></h1>
     		<h1><input type=submit value=Predict></h1>
     	</form>
 
 		{% if pred %}
+			<p> The object present in the images:- </p>
 			<p> {{ pred }}</p>
 		{% endif %}
 	</div>
@@ -33,7 +35,7 @@
 		width: auto;
 		height: auto;
 		background-color: rgba(0,0,0,0.3);
-		border-radius: 10px;
+		border-radius: 4px 50px 4px 50px;
 		left: 50%;
 		top: 50%;
 		position: absolute;
