@@ -1,0 +1,62 @@
+<head>
+
+<title>Cat or Dog</title>
+
+</head>
+
+<body>
+    <h1 >Cat and Dog Detection</h1>
+
+	<div class="box">
+    	<form method=post enctype=multipart/form-data>
+    		<h1><input type=file name=image accept="image/jpeg"></h1>
+    		<h1><input type=submit value=Predict></h1>
+    	</form>
+	</div>
+
+</body>
+
+<style>
+
+	body {
+		margin: 0 auto;
+		padding: 0;
+		font-family: sans-serif;
+		background-color: slategray;
+		background-size: 100%;
+		}
+	.box {
+		width: auto;
+		height: auto;
+		background-color: rgba(0,0,0,0.3);
+		border-radius: 10px;
+		left: 50%;
+		top: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		color: #fff;
+		padding: 50px 20px;
+		}
+	h1 {
+		text-align: center;
+		padding: 40px;
+		font-size: 30px ;
+		}
+	.box  input[type="submit"]{
+		width: 100%;
+		height: 40px;
+		color: #000;
+		margin: 14px 0 5px 0;
+		background-color: darkgrey;
+		font-weight: bold;
+		border: none;
+		border-radius: 10px;
+		font-size: 16px;
+		}
+	.box  input[type="submit"]:hover{
+		background-color: #26c6da;
+		color: #000;
+		font-weight: bold;
+		}
+	
+</style>
