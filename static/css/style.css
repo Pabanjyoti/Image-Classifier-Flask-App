@@ -64,8 +64,7 @@ body {
     color: inherit;
 }
 
-.form .input-group label,
-.form .dropdown label {
+.form .input-group label{
     position: absolute;
     top: 0;
     left: 5%;
@@ -87,36 +86,6 @@ body {
     transition: 0.3s ease-out
   }
 
-  .dropdown {
-    font-family: sans-serif;
-    font-size: 1rem;
-    position: relative;
-    width: 100%;
-    padding: 10px 10px;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
-    background-color: rgba(200, 200, 200, 0.1);
-    color: inherit;
-    resize: none;
-    height: auto;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
 .submit-btn {
     display: block;
     margin-left: auto;
@@ -129,4 +98,60 @@ body {
     letter-spacing: 1px;
     padding: 10px 20px;
     cursor: pointer;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: gray;
+    background-image: none;
+    border: 1px solid black;
+}
+ 
+.select {
+    font-family: sans-serif;
+    font-size: 1rem;
+    position: relative;
+    display: block;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #2C3E50;
+    overflow: hidden;
+    border-radius: .25em;
+}
+select {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+ 
+select::-ms-expand {
+    display: none;
+}
+ 
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #34495E;
+    pointer-events: none;
+}
+ 
+.select:hover::after {
+    color: #F39C12;
+}
+ 
+<!-- For different browsers --> .select::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
 }
