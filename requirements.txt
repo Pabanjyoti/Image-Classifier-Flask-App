@@ -4,3 +4,4 @@ torch
 Pillow
 torchvision
 requests
+opencv-python
