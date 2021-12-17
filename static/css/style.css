@@ -11,19 +11,21 @@ body {
     font-family: sans-serif;
 }
 
-.box {
+.box,
+.pred-detail {
     height: 100vh;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .form h2 {
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 2rem;
-    color: rgb(168, 243, 230);
+    color: rgb(209, 238, 233);
 }
 
 .form {
@@ -80,14 +82,14 @@ body {
 ::placeholder {
     opacity: 0;
     transition: 0.3s ease-out
-  }
+}
 
 :focus::placeholder {
     opacity: 1;
     transition: 0.3s ease-out
-  }
+}
 
-  .dropdown {
+.dropdown {
     font-family: sans-serif;
     font-size: 1rem;
     position: relative;
@@ -101,9 +103,9 @@ body {
     color: inherit;
     resize: none;
     height: auto;
-  }
+}
   
-  .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -111,11 +113,20 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
-  }
+}
   
-  .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
-  }
+}
+
+select {
+    width: 100%;
+    color: #ffffff;
+    background-color: rgb(55 60 64);
+    border: none;
+    text-indent: 5px;
+}
+
 
 .submit-btn {
     display: block;
@@ -129,4 +140,58 @@ body {
     letter-spacing: 1px;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+.image-view {
+    position: relative;
+    justify-content: center;
+    padding-bottom: 5%;
+    display: flex;
+}
+
+.image-view img {
+    padding-top: 5%;
+}
+
+table {
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+tr, th {
+    background-color: rgba(200, 200, 200, 0.05);
+    padding: 1rem;
+}
+
+table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:75%;
+    background: linear-gradient(rgba(200, 200, 200, 0.25), rgba(200, 200, 200, 0.00) );
+    pointer-events: none;
+}
+
+th {
+    color: rgb(168, 243, 230);
+    font-size: larger;
+    font-weight: bolder;
+    padding: .50rem;
+}
+
+td {
+    color:rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+    text-align: center;
+    padding: .25rem;
+}
+
+.home-link{
+    bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 50px;
+    list-style: none;
 }
