@@ -1,7 +1,7 @@
 flask
 numpy
-torch
 Pillow
-torchvision
+torch==1.8.1+cpu 
+torchvision==0.9.1+cpu
 requests
 opencv-python
