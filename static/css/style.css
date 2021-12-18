@@ -151,6 +151,7 @@ select {
 
 .image-view img {
     padding-top: 5%;
+    margin-top: 20vh;
 }
 
 table {
