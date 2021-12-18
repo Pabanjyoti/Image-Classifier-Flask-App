@@ -1,8 +1,7 @@
--f https://download.pytorch.org/whl/torch_stable.html
 flask
 numpy
 Pillow
-torch==1.8.1+cpu 
-torchvision==0.9.1+cpu
+torch
+torchvision
 requests
 opencv-python
