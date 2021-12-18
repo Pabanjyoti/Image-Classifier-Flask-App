@@ -6,35 +6,69 @@
 <body>
 
 	<div class="box">
-    	<form id ="form" class="form" method="post" enctype="multipart/form-data">
 
-			<h2>Image Detection using Alexnet</h2>
-
-			<div class="input-group">
-				<label for="image_url">Enter a image URL:</label>
-				<input id="image_url" type="url" name="image">		
-			</div>
-			<div class="input-group">
-				<label for="nnModel">Neural Network Model:</label>
-			</div>			
-			<div class="select">
-			
-				<select id="nnModel" name="nnModel">
-					<option value="alexnet">Alexnet</option>
-					<option value="fasterRcnn">Faster RCNN</option>
-				</select>
-			</div>
-		</br>
-		</br>
-    		<h1><input class="submit-btn" type="submit" value="Predict"></h1>
-		</br>
-		</br>   	
-
-		{% if pred %}
-			<p> {{ pred }}</p>
-		{% endif %}
-
-		
-		</form>
+		{% if rCnnPred %}
+		<div class="image-view">
+			<img src="data:image/png;base64, {{rCnnPred}}" alt="Error" height ="auto">
 		</div>
+		<div class = "home-link">
+			<button class="submit-btn"><a href="/">Home</a></button>
+		</div>
+		<style>
+			.image-view img {
+				padding-top: 5%;
+				height: 85vh;
+			}
+		</style>
+
+		{% elif clsName1 %}
+			<div class="image-view">
+				<img src={{ img_url }} alt="Input Image" width="50%">
+			</div>
+			<div class="pred-detail">
+					<table>
+						<tr>
+							<th>Prediction</th>
+	                        <th>Confidence Percentage</th>
+						</tr>
+						<tr>
+							<td>{{ clsName1 }}</td>
+							<td>{{ percent1 }}</td>
+						</tr>
+						<tr>
+							<td>{{ clsName2 }}</td>
+							<td>{{ percent2 }}</td>
+						</tr>
+						<tr>
+							<td>{{ clsName3 }}</td>
+							<td>{{ percent3 }}</td>
+						</tr>
+					</table>
+			</div>
+			<div class = "home-link">
+				<button class="submit-btn"><a href="/">Home</a></button>
+			</div>
+		{% else %}
+    		<form id ="form" class="form" method="post" enctype="multipart/form-data">
+
+				<h2>Image Detection using Alexnet</h2>
+
+				<div class="input-group">
+					<label for="image_url">Enter a image URL:</label>
+					<input id="image_url" type="url" name="image">
+				</div>
+			
+				<div class="dropdown">
+					<label for="nnModel">Neural Network Model:</label>
+					<select id="nnModel" name="nnModel">
+						<option value="alexnet">Alexnet</option>
+						<option value="fasterRcnn">Faster RCNN</option>
+					</select>
+				</div>
+
+    			<input class="submit-btn" type="submit" value="Predict">
+    		</form>
+		{% endif %}
+	</div>
+
 </body>

@@ -1,4 +1,4 @@
-import torch, torchvision, cv2, requests, io
+import torch, torchvision, cv2, requests, io, base64
 import numpy as np
 import torchvision.transforms as transforms
 from PIL import Image
@@ -69,3 +69,6 @@ def faster(img_url):
     model.eval().to(device)
     boxes, classes, labels = predict(image, model, device, 0.8)
     image = draw_boxes(boxes, classes, labels, image)
+    buffer = cv2.imencode('.png', image)
+    data_uri = base64.b64encode(buffer[1]).decode('ascii')
+    return data_uri

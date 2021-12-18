@@ -23,4 +23,4 @@ def alex(img_url):
     _, indices = torch.sort(out, descending=True)
     percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
 
-    return [(classes[idx], percentage[idx].item()) for idx in indices[0][:2]]
+    return [(classes[idx], percentage[idx].item()) for idx in indices[0][:3]]

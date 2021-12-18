@@ -24,13 +24,10 @@ def predict():
 
     if nnModel == 'alexnet':
         cls = alexnet.alex(img_url)
+        return render_template('home.html', img_url= img_url, clsName1=cls[0][0], percent1=cls[0][1], clsName2=cls[1][0], percent2=cls[1][1], clsName3=cls[2][0], percent3=cls[2][1])
     elif nnModel == 'fasterRcnn':
-        # cls = fasterRcnn.faster(img_url)
-        cls = alexnet.alex(img_url)
-
-    #fasterRcnn.faster(img_url)                 #for faster rcnn
-
-    return render_template('home.html', pred=cls)
+        cls = fasterRcnn.faster(img_url)
+        return render_template('home.html', img_url= img_url, rCnnPred=cls)
 
 if __name__ == '__main__':
     app.run(port=3000,debug=True)
