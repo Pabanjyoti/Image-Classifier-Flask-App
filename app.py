@@ -17,7 +17,6 @@ def hello():
 
 @app.route('/',methods=['POST'])
 
-
 def predict():
 
     img_url = request.form.get('image')
