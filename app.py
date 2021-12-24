@@ -26,8 +26,8 @@ def predict():
         cls = fasterRcnn.faster(img_url)
         return render_template('home.html', img_url= img_url, rCnnPred=cls)
     else:
-        cls = cnn.detect(img_url, nnModel)
+        cls = cnn.detect(img_url)
         return render_template('home.html', img_url= img_url, clsName1=cls[0][0], percent1=cls[0][1], clsName2=cls[1][0], percent2=cls[1][1], clsName3=cls[2][0], percent3=cls[2][1])
-        
+                 
 if __name__ == '__main__':
     app.run(port=3000,debug=True)

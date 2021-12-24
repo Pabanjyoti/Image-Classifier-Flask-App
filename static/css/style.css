@@ -29,13 +29,13 @@ body {
 }
 
 .form {
-    position: absolute;
+    position: relative;
     width: 100%;
     max-width: 400px;
     padding: 40px 40px 40px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
 }
 
 .form::before {
