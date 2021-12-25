@@ -23,7 +23,7 @@ def detect(img_url, nnModel):
     elif nnModel == "shufflenet":
         model = models.shufflenet_v2_x1_0(pretrained=True)
     elif nnModel == "mobilenet":
-        model = models.mobilenet_v2(pretrained=True)
+        model = models.mobilenet_v3_large(pretrained=True)
     elif nnModel == "resnext":
         model = models.resnext50_32x4d(pretrained=True)
     elif nnModel == "wide_resnet":
@@ -31,11 +31,11 @@ def detect(img_url, nnModel):
     elif nnModel == "mnasnet":
         model = models.mnasnet1_0(pretrained=True)
     elif nnModel == "efficientnet":
-        model = models.efficientnet_b0(pretrained=True)
+        model = models.efficientnet_b6(pretrained=True)
     elif nnModel == "regnet_y":
-        model = models.regnet_y_400mf(pretrained=True)
+        model = models.regnet_y_16gf(pretrained=True)
     elif nnModel == "regnet_x":
-        model = models.regnet_x_400mf(pretrained=True)
+        model = models.regnet_x_16gf(pretrained=True)
 
 
     response=requests.get(img_url)
