@@ -16,8 +16,7 @@
 		</div>
 		<style>
 			.image-view img {
-				border-radius: 8px;
-				padding-top: 10%;
+				padding-top: 5%;
 				height: 85vh;
 			}
 		</style>
@@ -49,28 +48,40 @@
 			<div class = "home-link">
 				<button class="submit-btn"><a href="/">Home</a></button>
 			</div>
-
-
 		{% else %}
-		<form id ="form" class="form" method="post" enctype="multipart/form-data">
+    		<form id ="form" class="form" method="post" enctype="multipart/form-data">
 
-			<h2>Image Detection using Machine Learning</h2>
+				<h2>Image Detection using Machine Learning</h2>
 
-			<div class="input-group">
-				<label for="image_url">Enter a image URL:</label>
-				<input id="image_url" type="url" name="image">
-			</div>
-		
-			<div class="dropdown">
-				<label for="nnModel">Neural Network Model:</label>
-				<select id="nnModel" name="nnModel">
-					<option value="Model">NnModel</option>
-					<option value="fasterRcnn">RCNN</option>
-				</select>
-			</div>
+				<div class="input-group">
+					<label for="image_url">Enter a image URL:</label>
+					<input id="image_url" type="url" name="image">
+				</div>
+			
+				<div class="dropdown">
+					<label for="nnModel">Neural Network Model:</label>
+					<select id="nnModel" name="nnModel">
+						<option value="alexnet">AlexNet</option>
+						<option value="resnet">ResNet</option>
+						<option value="squeezenet">Squeezenet</option>
+						<option value="vgg">VGG</option>
+						<option value="densenet">DenseNet</option>
+						<option value="inception">Inception</option>
+						<option value="googlenet">GoogLeNet</option>
+						<option value="shufflenet">ShuffleNet</option>
+						<option value="mobilenet">MobileNet</option>
+						<option value="resnext">ResNeXt</option>
+						<option value="wide_resnet">Wide ResNet</option>
+						<option value="mnasnet">MNASNet</option>
+						<option value="efficientnet">EfficientNet</option>
+						<option value="regnet_x">RegNet-X</option>
+						<option value="regnet_y">RegNet-Y</option>
+						<option value="fasterRcnn">RCNN</option>
+					</select>
+				</div>
 
-			<input class="submit-btn" type="submit" value="Predict">
-		</form>
+    			<input class="submit-btn" type="submit" value="Predict">
+    		</form>
 		{% endif %}
 	</div>
 
