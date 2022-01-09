@@ -39,7 +39,7 @@ function apiReq() {
                }
 
                 var table = document.createElement('table');
-                table.innerHTML= "<tr><thcolspan='2'>" + data.nnModel + "</th></tr><tr><th>Prediction</th><th>Confidence Percentage</th></tr><tr><td>"+ data.clsName1 +"</td><td>" + data.percent1 +"</td></tr><tr><td>"+ data.clsName2 +"</td><td>"+ data.percent2 +"</td></tr><tr><td>"+ data.clsName3 +"</td><td>"+ data.percent3 +"</td></tr>";
+                table.innerHTML= "<tr><th colspan='2'>" + data.nnModel + "</th></tr><tr><th>Prediction</th><th>Confidence Percentage</th></tr><tr><td>"+ data.clsName1 +"</td><td>" + data.percent1 +"</td></tr><tr><td>"+ data.clsName2 +"</td><td>"+ data.percent2 +"</td></tr><tr><td>"+ data.clsName3 +"</td><td>"+ data.percent3 +"</td></tr>";
                 document.getElementsByClassName('pred-detail')[0].appendChild(table);
 
                 if (document.getElementsByClassName('home-link')[0] == null){
