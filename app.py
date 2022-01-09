@@ -5,7 +5,6 @@ Created on Sat Dec 11 13:17:51 2021
 @author: DELL
 """
 import cnn
-import json
 
 from flask import Flask, render_template, request, jsonify
 
@@ -33,7 +32,6 @@ def pred():
 
 @app.route('/',methods=['POST'])
 def predict():
-
     return ('', 204)
         
 if __name__ == '__main__':
