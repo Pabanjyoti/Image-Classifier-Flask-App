@@ -29,7 +29,8 @@ function apiReq() {
                 }
 
                 if (document.getElementsByClassName('image-view')[0] == null){
-                    document.getElementsByClassName('box')[0].innerHTML = "<div class='image-view'> <img src=" + img_url+ " alt='Input Image' width='50%'> </div>";
+                    document.getElementsByClassName('box')[0].innerHTML = "<div class='image-view'> <img src=" + img_url+ " alt='Input Image'> </div>";
+                    document.getElementsByClassName('box')[0].style.display="block";
                 }
 
                 if (document.getElementsByClassName('pred-detail')[0] == null){
@@ -45,8 +46,9 @@ function apiReq() {
                 if (document.getElementsByClassName('home-link')[0] == null){
                     var homeLinkDiv = document.createElement('div');
                     homeLinkDiv.className = "home-link";
-                    homeLinkDiv.innerHTML = "<div class='<button class='submit-btn'><a href='/'>Home</a></button>";
+                    homeLinkDiv.innerHTML = "<button class='submit-btn'><a href='/'>Home</a></button>";
                     document.getElementsByClassName('box')[0].appendChild(homeLinkDiv);
+                    document.getElementsByClassName('submit-btn')[0].style.marginLeft="unset";
                 }
 
             }

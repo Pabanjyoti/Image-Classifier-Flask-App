@@ -1,4 +1,4 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,8 +11,7 @@ body {
     font-family: sans-serif;
 }
 
-.box,
-.pred-detail {
+.box {
     height: -webkit-fill-available;
     width: auto;
     display: flex;
@@ -66,8 +65,7 @@ body {
     color: inherit;
 }
 
-.form .input-group label,
-.form .dropdown label {
+.form .input-group label {
     position: absolute;
     top: 0;
     left: 5%;
@@ -89,45 +87,6 @@ body {
     transition: 0.3s ease-out
 }
 
-.dropdown {
-    font-family: sans-serif;
-    font-size: 1rem;
-    position: relative;
-    width: 100%;
-    padding: 10px 10px;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
-    background-color: rgba(200, 200, 200, 0.1);
-    color: inherit;
-    resize: none;
-    height: auto;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-select {
-    width: 100%;
-    color: #ffffff;
-    background-color: rgb(55 60 64);
-    border: none;
-    text-indent: 5px;
-}
-
-
 .submit-btn {
     display: block;
     margin-left: auto;
@@ -140,6 +99,15 @@ select {
     letter-spacing: 1px;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+.pred-detail {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .image-view {
@@ -156,7 +124,9 @@ table {
     position: relative;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.7);
+    margin: 1%;
 }
+
 
 tr, th {
     background-color: rgba(200, 200, 200, 0.05);
@@ -188,9 +158,19 @@ td {
     padding: .25rem;
 }
 
-.home-link{
+.home-link {
+    display: flex;
     bottom: 10%;
     padding-top: 5%;
     padding-bottom: 50px;
-    list-style: none;
-} */
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
