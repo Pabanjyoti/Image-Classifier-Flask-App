@@ -1,0 +1,24 @@
+<head>
+	<title>Image Detection</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></link>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon"> 
+</head>
+
+<body>
+	<div class="box">
+    	<form id ="form" method="POST" class="form" onsubmit="apiReq()">
+
+			<h2>Image Classification using Machine Learning</h2>
+
+			<div class="input-group">
+				<label for="image_url">Enter a image URL:</label>
+				<input id="image_url" type="url" name="image">
+			</div>
+
+            <button id="submit_btn" class="submit-btn">Predict</button>
+    	</form>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>

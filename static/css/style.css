@@ -1,43 +1,36 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
+/* CSS Front */
 
 body {
     background: slategray;
-    background-size: cover;
     font-family: sans-serif;
 }
-
-.box,
-.pred-detail {
-    height: 100vh;
-    width: auto;
-    display: flex;
+.box {
+	position: absolute;
+	width: 1000px;
+	height: 410px;
+	left: 50%;
+	transform: translate(-50%);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
-
+.form {
+    position: absolute;
+    width: 100%;
+    max-width: 410px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 40px 40px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
 .form h2 {
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 2rem;
     color: rgb(209, 238, 233);
 }
-
-.form {
-    position: absolute;
-    width: 100%;
-    max-width: 400px;
-    padding: 40px 40px 40px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-}
-
 .form::before {
     content: '';
     position: absolute;
@@ -48,11 +41,9 @@ body {
     background: linear-gradient(rgba(200, 200, 200, 0.25), rgba(200, 200, 200, 0.00) );
     pointer-events: none;
 }
-
 .form .input-group {
     position: relative;
 }
-
 .form .input-group input {
     position: relative;
     width: 100%;
@@ -65,69 +56,6 @@ body {
     background-color: rgba(200, 200, 200, 0.1);
     color: inherit;
 }
-
-.form .input-group label,
-.form .dropdown label {
-    position: absolute;
-    top: 0;
-    left: 5%;
-    padding: 10px 0;
-    pointer-events: none;
-    transform: translateY(-30px);
-    transition: 0.3s ease-out;
-    color: rgb(168, 243, 230);
-    font-size: .8rem;
-}
-
-::placeholder {
-    opacity: 0;
-    transition: 0.3s ease-out
-}
-
-:focus::placeholder {
-    opacity: 1;
-    transition: 0.3s ease-out
-}
-
-.dropdown {
-    font-family: sans-serif;
-    font-size: 1rem;
-    position: relative;
-    width: 100%;
-    padding: 10px 10px;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
-    background-color: rgba(200, 200, 200, 0.1);
-    color: inherit;
-    resize: none;
-    height: auto;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-select {
-    width: 100%;
-    color: #ffffff;
-    background-color: rgb(55 60 64);
-    border: none;
-    text-indent: 5px;
-}
-
-
 .submit-btn {
     display: block;
     margin-left: auto;
@@ -142,29 +70,22 @@ select {
     cursor: pointer;
 }
 
+/* CSS Back */
 .image-view {
     position: relative;
     justify-content: center;
-    padding-bottom: 5%;
     display: flex;
 }
-
 .image-view img {
     padding-top: 5%;
-    margin-top: 20vh;
 }
-
 table {
+    width: 100%;
     position: relative;
+    justify-content: center;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.7);
 }
-
-tr, th {
-    background-color: rgba(200, 200, 200, 0.05);
-    padding: 1rem;
-}
-
 table::before {
     content: '';
     position: absolute;
@@ -175,24 +96,32 @@ table::before {
     background: linear-gradient(rgba(200, 200, 200, 0.25), rgba(200, 200, 200, 0.00) );
     pointer-events: none;
 }
-
+tr, th {
+    background-color: rgba(200, 200, 200, 0.05);
+    padding: 1rem;
+}
 th {
     color: rgb(168, 243, 230);
     font-size: larger;
     font-weight: bolder;
     padding: .50rem;
 }
-
 td {
     color:rgba(255, 255, 255, 0.7);
     font-weight: normal;
     text-align: center;
     padding: .25rem;
 }
-
 .home-link{
-    bottom: 10%;
-    padding-top: 5%;
-    padding-bottom: 50px;
-    list-style: none;
-}
+    background-color: gray;
+    color: black;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .home-link:hover, .home-link:active {
+    background-color: green;
+    color: white;
+  }  
