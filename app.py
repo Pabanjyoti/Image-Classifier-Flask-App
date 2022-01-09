@@ -5,30 +5,36 @@ Created on Sat Dec 11 13:17:51 2021
 @author: DELL
 """
 import cnn
-import fasterRcnn
+import json
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app=Flask(__name__)
 
 @app.route('/',methods=['GET'])
-
 def hello():
-    return render_template('home.html')
+    return render_template('index.html')
+
+@app.route('/api/pred/', methods=['GET', 'POST'])
+def pred():
+
+    img_url = request.json['url']
+    nnModel = request.json['model']
+
+    print(img_url)
+    print(nnModel)
+
+    predResult= cnn.detect(img_url, nnModel)
+
+    return jsonify(nnModel=nnModel, img_url=img_url,
+                   clsName1=predResult[0][0], percent1=predResult[0][1],
+                   clsName2=predResult[1][0], percent2=predResult[1][1],
+                   clsName3=predResult[2][0], percent3=predResult[2][1])
 
 @app.route('/',methods=['POST'])
-
 def predict():
 
-    img_url = request.form.get('image')
-    nnModel = request.form.get('nnModel')
-
-    if nnModel == 'fasterRcnn':
-        cls = fasterRcnn.faster(img_url)
-        return render_template('home.html', img_url= img_url, rCnnPred=cls)
-    else:
-        cls = cnn.detect(img_url, nnModel)
-        return render_template('home.html', img_url= img_url, clsName1=cls[0][0], percent1=cls[0][1], clsName2=cls[1][0], percent2=cls[1][1], clsName3=cls[2][0], percent3=cls[2][1])
+    return ('', 204)
         
 if __name__ == '__main__':
     app.run(port=3000,debug=True)

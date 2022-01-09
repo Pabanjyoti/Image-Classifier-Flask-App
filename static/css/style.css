@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
 
 .box,
 .pred-detail {
-    height: 100vh;
+    height: -webkit-fill-available;
     width: auto;
     display: flex;
     justify-content: center;
@@ -145,13 +145,11 @@ select {
 .image-view {
     position: relative;
     justify-content: center;
-    padding-bottom: 5%;
     display: flex;
 }
 
 .image-view img {
     padding-top: 5%;
-    margin-top: 20vh;
 }
 
 table {
@@ -195,4 +193,4 @@ td {
     padding-top: 5%;
     padding-bottom: 50px;
     list-style: none;
-}
+} */

@@ -3,6 +3,7 @@ import torchvision.models as models
 import requests, io
 from torchvision import transforms as T
 from PIL import Image
+from flask import jsonify
 
 def detect(img_url, nnModel):
     
