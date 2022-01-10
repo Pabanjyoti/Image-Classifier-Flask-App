@@ -30,7 +30,7 @@ body {
 .form {
     position: absolute;
     width: 100%;
-    max-width: 400px;
+    max-width: 30%;
     padding: 40px 40px 40px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
@@ -118,6 +118,8 @@ body {
 
 .image-view img {
     padding-top: 5%;
+    padding-bottom: 5%;
+    width: 50vw;
 }
 
 table {
