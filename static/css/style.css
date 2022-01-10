@@ -111,14 +111,14 @@ body {
 }
 
 .image-view {
+    margin: 5%;
     position: relative;
     justify-content: center;
     display: flex;
 }
 
 .image-view img {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    box-shadow: 0 15px 25px rgb(0 0 0 / 50%);
     width: 50vw;
 }
 
