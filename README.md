@@ -6,7 +6,7 @@ Written in Python using Flask.
 ## The API
 
 ### The API expects a json request as below:
-```
+```json
 {
     "url": "https://www.tensorflow.org/tutorials/images/classification_files/output_N1loMlbYHeiJ_0.png",
     "model": "squeezenet"
@@ -14,11 +14,11 @@ Written in Python using Flask.
 ```
 
 where `url` can be a url for a image file and `model` can be anything from below array:
-```
+```py
 ["alexnet", "resnet", "squeezenet", "vgg", "densenet", "googlenet", "shufflenet", "mobilenet", "resnext", "wide_resnet", "mnasnet", "efficientnet", "regnet_x", "regnet_y"]
 ```
 ### The Response of the API request is:
-```
+```json
 {
     "clsName1": "bee",
     "clsName2": "bubble",
