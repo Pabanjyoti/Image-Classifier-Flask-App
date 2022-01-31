@@ -34,3 +34,6 @@ where `clsName` indicates the detected object and `percent` indicates respective
 
 ### Here is a screenshot of the API request and it's response in POSTMAN:
 ![screenshot](https://i.imgur.com/XxzQZ33.png)
+
+## Colab Notebook for demo:
+[Click this link to open Colab Notebook. Run each cell one after another.](https://colab.research.google.com/drive/13-uIcgEsFGA3ZNgqAPxQgQ82I5Uk9lpS?usp=sharing)
