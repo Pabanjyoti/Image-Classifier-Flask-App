@@ -24,9 +24,11 @@ def pred():
     print(img_url)
     print(nnModel)
 
-    if urlValid.valid_url(img_url) == True:
+    url_check = urlValid.valid_url(img_url)
+
+    if url_check != 'invalid_image_url':
         predResult= cnn.detect(img_url, nnModel)
-        return jsonify(nnModel=nnModel, img_url=img_url, response = 'valid url',
+        return jsonify(nnModel=nnModel, img_url=img_url, response = url_check,
                    clsName1=predResult[0][0], percent1=predResult[0][1],
                    clsName2=predResult[1][0], percent2=predResult[1][1],
                    clsName3=predResult[2][0], percent3=predResult[2][1])

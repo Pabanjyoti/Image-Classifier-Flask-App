@@ -1,9 +1,10 @@
-import mimetypes
+import requests
 
 def valid_url(url):
-
-    mimetype, encoding = mimetypes.guess_type(url)
     
+    response = requests.get(url)
+    mimetype = response.headers.get("Content-Type", default = None)
+
     if mimetype:
         return any([mimetype.startswith("image")])
     else:
