@@ -4,11 +4,23 @@ var models = ["alexnet", "resnet", "squeezenet", "vgg", "densenet", "googlenet",
 
 var xhr = new Array(models.length);
 
+function checkImage() {
 
-function apiReq() {
+    var url = document.getElementById('image_url').value;
 
-    var img_url = document.getElementById('image_url').value;
+    var image = new Image();
+    image.onload = function() {
+        if (this.width > 0) {
+          apiReq(url);
+        }
+    }
+    image.onerror = function() {
+        alert("Please enter a valid imag url!!");;
+    }
+    image.src = url;
+}
 
+function apiReq(img_url) {
  
     for (i = 0; i < models.length; i++)
     {

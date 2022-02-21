@@ -5,6 +5,7 @@ Created on Sat Dec 11 13:17:51 2021
 @author: DELL
 """
 import cnn
+import urlValid
 
 from flask import Flask, render_template, request, jsonify
 
@@ -23,12 +24,15 @@ def pred():
     print(img_url)
     print(nnModel)
 
-    predResult= cnn.detect(img_url, nnModel)
-
-    return jsonify(nnModel=nnModel, img_url=img_url,
+    if urlValid.valid_url(img_url) == True:
+        predResult= cnn.detect(img_url, nnModel)
+        return jsonify(nnModel=nnModel, img_url=img_url, response = 'valid url',
                    clsName1=predResult[0][0], percent1=predResult[0][1],
                    clsName2=predResult[1][0], percent2=predResult[1][1],
                    clsName3=predResult[2][0], percent3=predResult[2][1])
+    else:
+        return jsonify(nnModel=nnModel, img_url=img_url,
+                   response = 'not a valid image url')
 
 @app.route('/',methods=['POST'])
 def predict():
