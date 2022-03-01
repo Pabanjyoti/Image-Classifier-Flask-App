@@ -1,42 +1,36 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
+/* CSS Front */
 
 body {
     background: slategray;
-    background-size: cover;
     font-family: sans-serif;
 }
-
 .box {
-    height: -webkit-fill-available;
-    width: auto;
-    display: flex;
+	position: absolute;
+	width: 1000px;
+	height: 410px;
+	left: 50%;
+	transform: translate(-50%);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
-
+.form {
+    position: absolute;
+    width: 100%;
+    max-width: 410px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 40px 40px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
 .form h2 {
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 2rem;
     color: rgb(209, 238, 233);
 }
-
-.form {
-    position: absolute;
-    width: 100%;
-    max-width: 30%;
-    padding: 40px 40px 40px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-}
-
 .form::before {
     content: '';
     position: absolute;
@@ -47,11 +41,9 @@ body {
     background: linear-gradient(rgba(200, 200, 200, 0.25), rgba(200, 200, 200, 0.00) );
     pointer-events: none;
 }
-
 .form .input-group {
     position: relative;
 }
-
 .form .input-group input {
     position: relative;
     width: 100%;
@@ -64,29 +56,6 @@ body {
     background-color: rgba(200, 200, 200, 0.1);
     color: inherit;
 }
-
-.form .input-group label {
-    position: absolute;
-    top: 0;
-    left: 5%;
-    padding: 10px 0;
-    pointer-events: none;
-    transform: translateY(-30px);
-    transition: 0.3s ease-out;
-    color: rgb(168, 243, 230);
-    font-size: .8rem;
-}
-
-::placeholder {
-    opacity: 0;
-    transition: 0.3s ease-out
-}
-
-:focus::placeholder {
-    opacity: 1;
-    transition: 0.3s ease-out
-}
-
 .submit-btn {
     display: block;
     margin-left: auto;
@@ -101,40 +70,22 @@ body {
     cursor: pointer;
 }
 
-.pred-detail {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
+/* CSS Back */
 .image-view {
-    margin: 5%;
     position: relative;
     justify-content: center;
     display: flex;
 }
-
 .image-view img {
-    box-shadow: 0 15px 25px rgb(0 0 0 / 50%);
-    width: 50vw;
+    padding-top: 5%;
 }
-
 table {
+    width: 100%;
     position: relative;
+    justify-content: center;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.7);
-    margin: 1%;
 }
-
-
-tr, th {
-    background-color: rgba(200, 200, 200, 0.05);
-    padding: 1rem;
-}
-
 table::before {
     content: '';
     position: absolute;
@@ -145,34 +96,32 @@ table::before {
     background: linear-gradient(rgba(200, 200, 200, 0.25), rgba(200, 200, 200, 0.00) );
     pointer-events: none;
 }
-
+tr, th {
+    background-color: rgba(200, 200, 200, 0.05);
+    padding: 1rem;
+}
 th {
     color: rgb(168, 243, 230);
     font-size: larger;
     font-weight: bolder;
     padding: .50rem;
 }
-
 td {
     color:rgba(255, 255, 255, 0.7);
     font-weight: normal;
     text-align: center;
     padding: .25rem;
 }
-
-.home-link {
-    display: flex;
-    bottom: 10%;
-    padding-top: 5%;
-    padding-bottom: 50px;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-a {
+.home-link{
+    background-color: gray;
     color: black;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
     text-decoration: none;
-}
+    display: inline-block;
+  }
+  .home-link:hover, .home-link:active {
+    background-color: green;
+    color: white;
+  }  

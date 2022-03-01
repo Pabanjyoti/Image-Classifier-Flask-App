@@ -29,26 +29,24 @@ function apiReq() {
                 }
 
                 if (document.getElementsByClassName('image-view')[0] == null){
-                    document.getElementsByClassName('box')[0].innerHTML = "<div class='image-view'> <img src=" + img_url+ " alt='Input Image'> </div>";
-                    document.getElementsByClassName('box')[0].style.display="block";
+                    document.getElementsByClassName('box')[0].innerHTML = "<div class='image-view'> <img src=" + img_url+ " alt='Input Image' width='50%'> </div>";
                 }
 
                 if (document.getElementsByClassName('pred-detail')[0] == null){
                     var predDetailDiv = document.createElement('div');
                     predDetailDiv.className = "pred-detail";
                     document.getElementsByClassName('box')[0].appendChild(predDetailDiv);
+                    
                }
-
                 var table = document.createElement('table');
-                table.innerHTML= "<tr><th colspan='2' style='color: yellowgreen; text-transform: capitalize;'>" + data.nnModel + "</th></tr><tr><th>Prediction</th><th>Confidence Percentage</th></tr><tr><td>"+ data.clsName1 +"</td><td>" + data.percent1 +"</td></tr><tr><td>"+ data.clsName2 +"</td><td>"+ data.percent2 +"</td></tr><tr><td>"+ data.clsName3 +"</td><td>"+ data.percent3 +"</td></tr>";
+                table.innerHTML= "<tr><th colspan='2'>" + data.nnModel + "</th></tr><tr><th>Prediction</th><th>Confidence Percentage</th></tr><tr><td>"+ data.clsName1 +"</td><td>" + data.percent1 +"</td></tr><tr><td>"+ data.clsName2 +"</td><td>"+ data.percent2 +"</td></tr><tr><td>"+ data.clsName3 +"</td><td>"+ data.percent3 +"</td></tr>";
                 document.getElementsByClassName('pred-detail')[0].appendChild(table);
 
                 if (document.getElementsByClassName('home-link')[0] == null){
                     var homeLinkDiv = document.createElement('div');
                     homeLinkDiv.className = "home-link";
-                    homeLinkDiv.innerHTML = "<button class='submit-btn'><a href='/'>Home</a></button>";
+                    homeLinkDiv.innerHTML = "<div class='<button class='submit-btn'><a href='/'>Home</a></button>";
                     document.getElementsByClassName('box')[0].appendChild(homeLinkDiv);
-                    document.getElementsByClassName('submit-btn')[0].style.marginLeft="unset";
                 }
 
             }

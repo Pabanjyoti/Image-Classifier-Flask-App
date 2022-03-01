@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Dec 11 13:17:51 2021
-
 @author: DELL
 """
 import cnn
