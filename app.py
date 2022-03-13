@@ -23,16 +23,13 @@ def pred():
 
     models = ["alexnet", "resnet", "squeezenet", "vgg", "densenet", "googlenet", "shufflenet", "mobilenet", "resnext", "wide_resnet", "mnasnet", "efficientnet", "regnet_x", "regnet_y"]
 
-    if nnModel in models:
-        print(nnModel)
-    else:
+    if nnModel not in models:
         return jsonify(nnModel=nnModel, img_url=img_url,
-                   response = 'not a valid model')
+                   response = 'not a valid model')        
 
     url_check = urlValid.valid_url(img_url)
 
     if url_check != 'invalid_image_url':
-        print(img_url)
         predResult= cnn.detect(img_url, nnModel)
         return jsonify(nnModel=nnModel, img_url=img_url, response = url_check,
                    clsName1=predResult[0][0], percent1=predResult[0][1],
